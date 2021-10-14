@@ -31,13 +31,13 @@ let ccaaData = [], provData = [], ccaaMap, provMap;
 let tooltip = d3.select('#tooltip');
 
 /////EJECUCIÓN INICIAL DEL DASHBOARD
-const csv = d3.dsvFormat(",");
+const csv = d3.dsvFormat("\t");
 
 d3.queue()
-    .defer(d3.text, 'https://raw.githubusercontent.com/CarlosMunozDiazCSIC/plazas_concertadas_residencias/main/data/ccaa_plazas_priv_conc.csv')
-    .defer(d3.text, 'https://raw.githubusercontent.com/CarlosMunozDiazCSIC/plazas_concertadas_residencias/main/data/prov_plazas_priv_conc.csv')
-    .defer(d3.json, 'https://raw.githubusercontent.com/CarlosMunozDiazCSIC/plazas_concertadas_residencias/main/data/ccaa.json')
-    .defer(d3.json, 'https://raw.githubusercontent.com/CarlosMunozDiazCSIC/plazas_concertadas_residencias/main/data/provincias.json')
+    .defer(d3.text, 'https://raw.githubusercontent.com/CarlosMunozDiazCSIC/residencias_plazas-concertadas-v2_dashboard/main/data/ccaa_plazas_priv_conc.csv')
+    .defer(d3.text, 'https://raw.githubusercontent.com/CarlosMunozDiazCSIC/residencias_plazas-concertadas-v2_dashboard/main/data/prov_plazas_priv_conc.csv')
+    .defer(d3.json, 'https://raw.githubusercontent.com/CarlosMunozDiazCSIC/residencias_plazas-concertadas-v2_dashboard/main/data/ccaa.json')
+    .defer(d3.json, 'https://raw.githubusercontent.com/CarlosMunozDiazCSIC/residencias_plazas-concertadas-v2_dashboard/main/data/provincias.json')
     .await(function(error, ccaa, prov, ccaaPol, provPol) {
         if (error) throw error;
 

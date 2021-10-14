@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Las plazas concertadas en las residencias privado-concertadas de mayores en España</title>
+    <meta name="mrf-extractable" content="false">
+    <meta property='og:image' content=''>
+    <meta property="og:title" content="Las plazas concertadas en las residencias privado-concertadas de mayores en España">
+    <meta property="og:description" content="Mapa y gráfico lineal que muestra Las plazas concertadas en las residencias privado-concertadas de mayores en España">
+    <meta property="og:image" content="https://raw.githubusercontent.com/carlosmunozdiazcsic/plazas_concertadas_residencias/main/pre/cchs.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Titillium+Web%3A300%2C300italic%2C400%2C400italic%2C500%2C700%2C700italic&#038;subset=latin&#038;ver=5.8' type='text/css' media='all' />
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <section class="content b-chart active" id="chartBlock">
+                <div class="b-title">
+                    <h1 class="title">Las plazas concertadas en las residencias privado-concertadas de mayores en España</h1>
+                    <h2 class="subtitle">Gráfico 6/2021. Datos actualizados a septiembre de 2021. Nivel autonómico y provincial</h2>
+                </div>
+                <div class="chart__logics">
+                    <p class="chart__top-note">Sitúe el cursor encima (o pulse, si lee el artículo desde un dispositivo táctil) de una autonomía o provincia para conocer más información acerca de las plazas concertadas en sus residencias y su posición respecto a las demás en la gráfica lineal</p>
+                    <div class="chart__buttons">
+                        <button class="btn__chart active" data-type="ccaa">CCAA</button>
+                        <button class="btn__chart" data-type="provincia">Provincia</button>
+                    </div>
+                    <div class="chart__legend">
+                        <span class="chart__legend--gradient"></span>
+                        <div class="chart__legend--data">
+                            <span>0</span>
+                            <span>50</span>
+                            <span>100</span>
+                        </div>
+                    </div>               
+                </div>
+                <div class="chart__dashboard">
+                    <div class="chart__map" id="mapa"></div>
+                    <div class="chart__line"></div>
+                    <div class="chart__viz" id="viz"></div>
+                </div>
+                <!-- Pie de gráfico -->
+                <div class="chart__footer">
+                    <div class="chart__source">
+                        <p class="chart__source--data"><span>Fuente: </span>Envejecimiento en Red (EnR) y Departamento de Población, CSIC</p>
+                        <p class="chart__source--copyright"><a class="link" href="https://creativecommons.org/licenses/by/4.0/deed.en_US" target="_blank">CC BY 4.0</a></p>
+                    </div>
+                </div>
+                <div class="logo">
+                    <img src="https://raw.githubusercontent.com/carlosmunozdiazcsic/plazas_concertadas_residencias/main/pre/cchs.png" alt="Logo del Centro de Ciencias Humanas y Sociales" width="100%" height="100%">
+                </div>         
+            </section>
+            <section class="content b-notes">
+                <div class="b-title">
+                    <h1 class="title">Notas adicionales al gráfico</h1>
+                </div>
+                <p class="text__paragraph">Para este gráfico se ha utilizado la base de datos gestionada y mantenida por el equipo de Envejecimiento en Red (EnR), del Grupo de Población del Consejo Superior de Investigaciones Científicas (CSIC).</p>
+                <p class="text__paragraph">La información aquí analizada refleja todos los centros privados que han respondido a las encuestas. Se dejan al margen del análisis los centros privados que no han respondido a las encuestas y los centros de titularidad pública.</p>
+                <p class="text__paragraph">Así, de los 3.930 centros privados que hay en España, el análisis se realiza sobre 3.408 centros (un 86,7% del total).</p>
+                <p class="text__paragraph">Más información disponible sobre centro y plazas residenciales en España, en <a class="link" href="http://envejecimiento.csic.es/" target="_blank">Envejecimiento CSIC</a> y en los <a class="link" href="https://envejecimientoenred.es/informes-envejecimiento-en-red/" target="_blank">diferentes informes sobre residencias publicados por Envejecimiento en Red</a>.</p>
+            </section>
+            <section class="content b-data">
+                <div class="b-title">
+                    <h1 class="title">Repositorio de código, de datos y posibilidad de descarga como imagen estática</h1>
+                </div>
+                <p class="text__header">Descarga de datos</p>
+                <p class="text__paragraph">Los datos procesados en esta visualización los puede encontrar en <a class="link" href="https://github.com/carlosmunozdiazcsic/plazas_concertadas_residencias/" target="_blank">este repositorio de Github</a>.</p>
+                <p class="text__paragraph">Si desea descargarlos, puede hacerlo desde <a class="link" href="https://github.com/carlosmunozdiazcsic/plazas_concertadas_residencias/tree/main/data" target="_blank">aquí</a>.</p>
+                <p class="text__header">Descargar como PNG</p>
+                <p class="text__paragraph">También puede descargar el gráfico como una imagen .png haciendo click <button class="btn_share" id="pngImage">aquí</button></p> 
+                <p class="text__paragraph">El gráfico se descargará con los últimos filtros que haya utilizado.</p>
+                <p class="text__paragraph">Es conveniente advertir que, tras hacer una modificación de filtros, debe esperar unos segundos (entre 10 y 15) para que se renderice correctamente el bloque y pueda descargar la imagen de forma satisfactoria.</p>
+            </section>
+            <section class="content b-iframes">
+                <div class="b-title">
+                    <h1 class="title">Uso del iframe en sitios web</h1>
+                </div>
+                <p class="text__header">Embeber iframe con alto dinámico</p>
+                <p class="text__paragraph">A la hora de utilizar la visualización dentro de un iframe y poder visualizarla de forma responsiva, este desarrollo se sirve de la librería <a class="link" href="http://blog.apps.npr.org/pym.js/" target="_blank">Pym.js</a>, que modifica de forma dinámica la altura de los iframes.</p>
+                <p class="text__paragraph">Si su sitio web acepta el uso de librerías de terceros, como es el caso de Pym.js, y desea disponer la opción responsiva de esta visualización, copie el siguiente código:</p>
+                <textarea class="text__iframe" disabled=""><div id="viz_cchs_6_2021"></div><script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script><script>let pymParent = new pym.Parent('viz_cchs_6_2021', 'https://EnvejecimientoEnRed.github.io/carlosmunozdiazcsic/plazas_concertadas_residencias/', {});</script></textarea>
+                <p class="text__header">Embeber iframe con alto fijo</p>
+                <p class="text__paragraph">Aunque el siguiente iframe tiene una altura fija -708px-, el gráfico se ve correctamente en todos los dispositivos ya que siempre se ajusta al alto disponible que dejan otros elementos como títulos, selectores, botones o leyenda.</p>             
+                <p class="text__paragraph">Si desea integrar esta visualización en su propia página, puede hacerlo copiando el siguiente código:</p>
+                <textarea class="text__iframe" disabled=""><iframe src="https://EnvejecimientoEnRed.github.io/carlosmunozdiazcsic/plazas_concertadas_residencias/?iframe=fijo" style="height:708px;width:100%;" title="Plazas concertadas en residencias de mayores en España"></iframe></textarea>
+            </section>
+            <section class="content b-rrss">
+                <div class="b-title">
+                    <h1 class="title">Compartir en redes sociales</h1>
+                </div>
+                <p class="text__paragraph">Existe la posibilidad de compartir la visualización a través de las redes sociales. Puede hacerlo clicando en alguno de los siguientes iconos:</p>
+                <div class="rrss">
+                    <a href="#" class="fa fa-facebook" id="shareFB" target="_blank"></a>
+                    <a href="#" class="fa fa-twitter" id="shareTW" data-text="Las plazas concertadas en las residencias privado-concertadas de mayores en España" target="_blank"></a>
+                    <a href="#" class="fa fa-linkedin" id="shareLK" data-text="Las plazas concertadas en las residencias privado-concertadas de mayores en España" target="_blank"></a>
+                    <a href="#" class="fa fa-whatsapp" id="shareWA" data-text="Las plazas concertadas en las residencias privado-concertadas de mayores en España" target="_blank"></a>
+                </div>
+            </section>
+        </div>        
+        <nav class="tabs">
+            <ul class="l-tabs">
+                <li class="tab active" data-target="b-chart">Gráfico</li>
+                <li class="tab" data-target="b-notes">Notas</li>
+                <li class="tab" data-target="b-data">Descarga&nbsp;<i class="fa fa--share fa-download"></i></li>
+                <li class="tab" data-target="b-iframes">Embeber</li>
+                <li class="tab tab--rrss" data-target="b-rrss"><i class="fa fa--share fa-share-alt"></i></li>
+            </ul>
+        </nav>
+        <div class="chart__tooltip" id="tooltip">
+            <p class="chart__tooltip--title"></p>
+            <p class="chart__tooltip--text"></p>
+        </div>  
+    </div>
+    <!-- Uso de PYMJS para alturas dinámicas -->
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    <script>
+        var pymChild = new pym.Child();
+    </script>
+</body>
+</html>

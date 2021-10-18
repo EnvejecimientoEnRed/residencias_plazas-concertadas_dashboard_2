@@ -48,6 +48,7 @@ d3.queue()
         provData = provData.reverse();
 
         ccaaMap = topojson.feature(ccaaPol, ccaaPol.objects['ccaa']);
+        console.log(ccaaMap);
         provMap = topojson.feature(provPol, provPol.objects['provincias']);
 
         //Dejamos los datos incluidos en los polígonos de los mapas
@@ -106,6 +107,7 @@ function initMap() {
         .style('stroke-width', '0.25px')
         .attr("d", path)
         .on('mousemove mouseover', function(d,i,e){
+            console.log(d);
             //Línea diferencial y cambio del polígonos
             let current = this;
             

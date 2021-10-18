@@ -34,10 +34,10 @@ let tooltip = d3.select('#tooltip');
 const csv = d3.dsvFormat("\t");
 
 d3.queue()
-    .defer(d3.text, 'https://raw.githubusercontent.com/CarlosMunozDiazCSIC/residencias_plazas-concertadas-v2_dashboard/main/data/ccaa_plazas_priv_conc.csv')
-    .defer(d3.text, 'https://raw.githubusercontent.com/CarlosMunozDiazCSIC/residencias_plazas-concertadas-v2_dashboard/main/data/prov_plazas_priv_conc.csv')
-    .defer(d3.json, 'https://raw.githubusercontent.com/CarlosMunozDiazCSIC/residencias_plazas-concertadas-v2_dashboard/main/data/ccaa.json')
-    .defer(d3.json, 'https://raw.githubusercontent.com/CarlosMunozDiazCSIC/residencias_plazas-concertadas-v2_dashboard/main/data/provincias.json')
+    .defer(d3.text, 'https://raw.githubusercontent.com/EnvejecimientoEnRed/residencias_plazas-concertadas_dashboard_2/main/data/ccaa_plazas_priv_conc.csv')
+    .defer(d3.text, 'https://raw.githubusercontent.com/EnvejecimientoEnRed/residencias_plazas-concertadas_dashboard_2/main/data/prov_plazas_priv_conc.csv')
+    .defer(d3.json, 'https://raw.githubusercontent.com/EnvejecimientoEnRed/residencias_plazas-concertadas_dashboard_2/main/data/ccaa.json')
+    .defer(d3.json, 'https://raw.githubusercontent.com/EnvejecimientoEnRed/residencias_plazas-concertadas_dashboard_2/main/data/provincias.json')
     .await(function(error, ccaa, prov, ccaaPol, provPol) {
         if (error) throw error;
 
@@ -48,7 +48,6 @@ d3.queue()
         provData = provData.reverse();
 
         ccaaMap = topojson.feature(ccaaPol, ccaaPol.objects['ccaa']);
-        console.log(ccaaMap);
         provMap = topojson.feature(provPol, provPol.objects['provincias']);
 
         //Dejamos los datos incluidos en los polígonos de los mapas
@@ -107,7 +106,6 @@ function initMap() {
         .style('stroke-width', '0.25px')
         .attr("d", path)
         .on('mousemove mouseover', function(d,i,e){
-            console.log(d);
             //Línea diferencial y cambio del polígonos
             let current = this;
             

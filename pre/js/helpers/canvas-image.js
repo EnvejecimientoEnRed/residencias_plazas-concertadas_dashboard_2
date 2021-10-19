@@ -10,7 +10,7 @@ function setChartCanvasImage() {
     // Create a link
     var aDownloadLink = document.createElement('a');
     // Add the name of the file to the link
-    aDownloadLink.download = 'residencias_plazas-concertadas_dashboard.png';
+    aDownloadLink.download = 'residencias_plazas-concertadas_dashboard_2.png';
     // Attach the data to the link
     aDownloadLink.href = image;
     // Get the code to click the download link
